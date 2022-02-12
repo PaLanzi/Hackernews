@@ -1,14 +1,18 @@
 import React from "react";
 import { useParams } from "react-dom";
+import result from "./components/result"
 
-function list() {
+function list(news) {
   const articles = useParams();
 
   const article = article.find((article) => article.title === title);
   return (
-  <ul>
+<ul>
       <li>
-placeholder
+      <result news = {news}/>
       </li>
-      </ul>
+</ul>
+      )
 }
+
+export default list

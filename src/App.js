@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import result from "./result";
+import result from "./components/result";
 
 function App() {
   const [news, setNews] = useState([]);
@@ -26,6 +26,6 @@ function App() {
       <p>Hello World.</p>
     </div>
   );
-  <result news={news}/>
+  <list news={news}/>
 }
 export default App;
