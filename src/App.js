@@ -26,7 +26,7 @@ function App() {
     
   }, []);
   return (
-    <div>
+    <div className="HeaderElement">
       <h1>This is the N3w H4ck3r N3w5.</h1>
       <Form />
       <List news={news} />

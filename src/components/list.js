@@ -1,8 +1,9 @@
 import React from "react";
+import "./list.css"
 
 function list({ news }) {
   return (
-    <ul>
+    <ul className="unordered-list">
       {news.map((item) => (
         <li key={item.objectID}>{item.title}</li>
       ))}
