@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import List from "./components/list";
+import Form from "./components/form";
 
 function App() {
   const [news, setNews] = useState([]);
@@ -26,7 +27,8 @@ function App() {
   }, []);
   return (
     <div>
-      <p>Hello World.</p>
+      <h1>This is the N3w H4ck3r N3w5.</h1>
+      <Form />
       <List news={news} />
     </div>
   );
