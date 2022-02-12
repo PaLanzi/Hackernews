@@ -1,15 +1,11 @@
 import React from "react";
-import { useParams } from "react-dom";
 import result from "./components/result"
 
-function list(news) {
-  const articles = useParams();
-
-  const article = article.find((article) => article.title === title);
+function list({news}) {
   return (
 <ul>
+// map through results and display directly, like in the list of students from prev exercise<result news = {news}/>
       <li>
-      <result news = {news}/>
       </li>
 </ul>
       )
