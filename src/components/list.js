@@ -1,14 +1,15 @@
 import React from "react";
-import result from "./components/result"
 
-function list({news}) {
+function list({ news }) {
   return (
-<ul>
-// map through results and display directly, like in the list of students from prev exercise<result news = {news}/>
-      <li>
-      </li>
-</ul>
-      )
+    <ul>
+      {news.map((item) => (
+        <li key={item.objectID}>{item.title}</li>
+      ))}
+    </ul>
+  );
 }
 
-export default list
+export default list;
+
+// map through results and display directly, like in the list of students from prev exercise<result news = {news}/>

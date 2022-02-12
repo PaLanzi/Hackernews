@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-//import list from "./components/result";
+import List from "./components/list";
 
 function App() {
   const [news, setNews] = useState([]);
@@ -13,7 +13,8 @@ function App() {
         );
         if (res.ok) {
           const data = await res.json();
-          return setNews(data.results);
+          console.log(data)
+          return setNews(data.hits);
         }
         console.error("shit happens");
       } catch (e) {
@@ -21,14 +22,15 @@ function App() {
       }
     };
     fetchNews();
-    console.log({news})
+    
   }, []);
   return (
     <div>
       <p>Hello World.</p>
+      <List news={news} />
     </div>
   );
-  //<list news={news}/>
+  
 }
 export default App;
 
