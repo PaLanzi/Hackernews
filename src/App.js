@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import result from "./result";
 
 function App() {
+  const [news, setNews] = useState([]);
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch(
+          "https://hn.algolia.com/api/v1/search?query=Prisma"
+        );
+        if (res.ok) {
+          const data = await res.json();
+          return setNews(data.results);
+        }
+        console.error("shit happens");
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+    fetchNews();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Hello World.</p>
     </div>
   );
+  <result news={news}/>
 }
-
 export default App;
