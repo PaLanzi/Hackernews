@@ -16,14 +16,15 @@ function App() {
           const data = await res.json();
           console.log(data);
           setNews(data.hits);
+        } else {
+          console.error("shit happens");
         }
-        console.error("shit happens");
       } catch (e) {
         console.log(e.message);
       }
     };
     fetchNews();
-  }, []);
+  }, [searchValue]);
 
   function handleSearchValue(value) {
     setSearchValue(value);
