@@ -9,14 +9,12 @@ function App() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const searchValue = "Prisma";
         const res = await fetch(
           `https://hn.algolia.com/api/v1/search?query=${searchValue}`
         );
         if (res.ok) {
           const data = await res.json();
           console.log(data);
-          return setNews(data.hits);
         }
         console.error("shit happens");
       } catch (e) {
