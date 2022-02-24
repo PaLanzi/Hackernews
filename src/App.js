@@ -5,6 +5,7 @@ import Form from "./components/form";
 
 function App() {
   const [news, setNews] = useState([]);
+  const [searchValue, setSearchValue] = useState();
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -25,7 +26,9 @@ function App() {
     fetchNews();
   }, []);
 
-  function handleSearchValue(value) {}
+  function handleSearchValue(value) {
+    setSearchValue(value);
+  }
 
   return (
     <div className="HeaderElement">
