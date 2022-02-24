@@ -15,6 +15,7 @@ function App() {
         if (res.ok) {
           const data = await res.json();
           console.log(data);
+          setNews(data.hits);
         }
         console.error("shit happens");
       } catch (e) {
