@@ -31,9 +31,10 @@ function App() {
   }
 
   return (
-    <div className="HeaderElement">
-      <h1>This is the N3w H4ck3r N3w5.</h1>
-      <Form searchValue={handleSearchValue} />
+    <div>
+      <h1 className="HeaderElement">This is the N3w H4ck3r N3w5.
+      <Form searchValue={handleSearchValue} /></h1>
+    
       <List news={news} />
     </div>
   );
