@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 
-function Form({searchValue}) {
+function Form({ searchValue }) {
   const searchInput = useRef();
   const searchIt = (e) => {
     e.preventDefault();
@@ -14,11 +14,8 @@ function Form({searchValue}) {
         <input
           ref={searchInput}
           type="text"
-          placeholder="What you are looking for..."
+          placeholder="What you are looking for... press Enter"
         ></input>
-        <button type="submit" className="button">
-          Search
-        </button>
       </form>
     </div>
   );

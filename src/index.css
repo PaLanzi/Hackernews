@@ -17,16 +17,20 @@ code {
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
-  box-sizing: border-box;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 40px;
 }
 
-button {
-  background-color: rgb(230, 67, 208);
-  font-size: 20px;
-  border-radius: 50%;
+.unordered-list {
+  margin: 10px;
+  padding: 25px;
+  padding-right: px;
+  background-color: skyblue;
+  color: darkblue;
+  list-style-type: circle;
+  border-style: outset;
+  list-style-position: inside;
 }
