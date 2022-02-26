@@ -10,11 +10,11 @@ function App() {
   const [streamAnimation2, toggleStreamAnimation2] = useState(false);
   const [news, setNews] = useState([]);
   const [searchValue, setSearchValue] = useState();
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        setLoading(true)
+        setLoading(true);
         const res = await fetch(
           `https://hn.algolia.com/api/v1/search?query=${searchValue}`
         );
@@ -22,13 +22,13 @@ function App() {
           const data = await res.json();
           console.log(data);
           setNews(data.hits);
-          setLoading(false)
+          setLoading(false);
         } else {
-          console.error("shit happens");
+          console.error("....? nothing happins");
         }
       } catch (e) {
         console.log(e.message);
-        alert('Batman is coming!')
+        alert("Batman is coming!");
       }
     };
     fetchNews();
@@ -73,7 +73,10 @@ function App() {
       )}
       <h1 className="HeaderElement">
         This is the N3w H4ck3r N3w5.
-        <Form searchValue={handleSearchValue} />{(loading && <div className="loader">&nbsp;wait please</div>) || <List news={news} />}
+        <Form searchValue={handleSearchValue} />
+        {(loading && <div className="loader">&nbsp;wait please</div>) || (
+          <List news={news} />
+        )}
       </h1>
 
       {showConfetti && (
